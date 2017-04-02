@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-ch">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>楼盘查询-统计分析-知房网</title>
+<!--
+Holiday Template
+http://www.templatemo.com/tm-475-holiday
+-->
+  <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">  
+  <link href="css/flexslider.css" rel="stylesheet">
+  <link href="css/templatemo-style.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script> 
+
+  </head>
+  <body class="tm-gray-bg">
+  	<!-- Header -->
+  	<div class="tm-header">
+  		<div class="container">
+  			<div class="row">
+  				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
+  					<a href="#" class="tm-site-name">知房网</a>	
+  				</div>
+	  			<div class="col-lg-6 col-md-8 col-sm-9">
+	  				<div class="mobile-menu-icon">
+		              <i class="fa fa-bars"></i>
+		            </div>
+	  				<nav class="tm-nav">
+						<ul >
+							<li><a href="index.html">首页</a></li>
+							<li><a href="statis.html" class="active">统计分析</a>
+								<!--ul >
+									<li>宏观统计</li>
+									<li>楼盘查询</li>
+								</ul-->
+							</li>
+							<li><a href="forecast.html">价格预测</a></li>
+							<li><a href="login.html">登录|注册</a></li>
+						</ul>
+					</nav>		
+	  			</div>				
+  			</div>
+  		</div>	  	
+  	</div>
+	
+	
+
+
+	<!-- white bg -->
+	<section class="tm-white-bg section-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">楼盘查询</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+		</div>
+		
+	
+	
+
+	<ul class="select">
+		<li class="select-list">
+			<dl id="select1">
+				<dt>区域：</dt>
+				<dd class="select-all selected"><a href="#">不限</a></dd>
+				<dd><a href="#">东湖高新区</a></dd>
+				<dd><a href="#">洪山区</a></dd>
+				<dd><a href="#">江夏区</a></dd>
+				<dd><a href="#">武昌区</a></dd>
+				<dd><a href="#">青山区</a></dd>
+				<dd><a href="#">江岸区</a></dd>
+				<dd><a href="#">汉阳区</a></dd>
+				<dd><a href="#">黄陂区</a></dd>
+				<dd><a href="#">新洲区</a></dd>
+				<dd><a href="#">其他</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select2">
+				<dt>地铁：</dt>
+				<dd class="select-all selected"><a href="#">不限</a></dd>
+				<dd><a href="#">1号线</a></dd>
+				<dd><a href="#">2号线</a></dd>
+				<dd><a href="#">3号线</a></dd>
+				<dd><a href="#">4号线</a></dd>
+				<dd><a href="#">5号线</a></dd>
+				<dd><a href="#">6号线</a></dd>
+				<dd><a href="#">其他</a></dd>
+			</dl>
+		</li>
+		<li class="select-list">
+			<dl id="select3">
+				<dt>价格：</dt>
+				<dd class="select-all selected"><a href="#">不限</a></dd>
+				<dd><a href="#">3000以下</a></dd>
+				<dd><a href="#">3000-5000</a></dd>
+				<dd><a href="#">5000-8000</a></dd>
+				<dd><a href="#">8000-10000</a></dd>
+				<dd><a href="#">10000-15000</a></dd>
+				<dd><a href="#">15000-20000</a></dd>
+				<dd><a href="#">其他</a></dd>
+				<dd>单价（元/㎡）</dd>
+			</dl>
+		</li>
+
+			<li class="select-list">
+			<dl id="select3">
+				<dt>户型：</dt>
+				<dd class="select-all selected"><a href="#">不限</a></dd>
+				<dd><a href="#">一居室</a></dd>
+				<dd><a href="#">两居室</a></dd>
+				<dd><a href="#">三居室</a></dd>
+				<dd><a href="#">四居室</a></dd>
+				<dd><a href="#">五居室</a></dd>
+				<dd><a href="#">其他</a></dd>
+			</dl>
+		</li>
+		<li class="select-result">
+			<dl>
+				<dt>已选条件：</dt>
+				<dd class="select-no"></dd>
+			</dl>
+		</li>
+	</ul>
+
+
+<table class="results">
+<tr>
+<td>image</td>
+<td>美好广场</td>
+<td>
+项目地址：汉阳区江堤中路与马鹦路交汇口（宝马4S店对面）	</td>
+</tr>
+<tr>
+	<td>image</td>
+<td>新力帝泊湾</td>
+<td>
+项目地址：黄陂区盘龙城巨龙大道与兴龙路交汇处（华师附小旁）</td>
+</tr>
+</table>
+
+
+	</section>		 
+ 
+			
+		
+	
+	<footer class="tm-black-bg">
+		<div class="container">
+			<div class="row">
+				<p class="tm-copyright-text">Copyright &copy; 2017 Your Company Name </p>
+			</div>
+		</div>		
+	</footer>
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      		<!-- jQuery -->
+  	<script type="text/javascript" src="js/bootstrap.min.js"></script>					<!-- bootstrap js -->
+  	<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>			<!-- flexslider js -->
+  	<script type="text/javascript" src="js/templatemo-script.js"></script>      		<!-- Templatemo Script -->
+	<script>
+		$(function() {
+
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+		  	$('a[href*=#]:not([href=#])').click(function() {
+			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			      var target = $(this.hash);
+			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+			      if (target.length) {
+			        $('html,body').animate({
+			          scrollTop: target.offset().top
+			        }, 1000);
+			        return false;
+			      }
+			    }
+		  	});		  	
+		});
+		$(window).load(function(){
+			// Flexsliders
+		  	$('.flexslider.flexslider-banner').flexslider({
+			    controlNav: false
+		    });
+		  	$('.flexslider').flexslider({
+		    	animation: "slide",
+		    	directionNav: false,
+		    	slideshow: false
+		  	});
+		});
+	</script>
+ </body>
+ </html>
