@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="https://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+	</head>
+	<body>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/highcharts.js"></script>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/modules/exporting.js"></script>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/themes/grid-light.js"></script>
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+
+
+
+<script type="text/javascript">
+    $.getJSON('http://139.129.166.245:13000/jsonp?file=1.json&callback=?', function (data) {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+                },
+                title: {
+                    text: '不同装修方式房屋价格均值图'
+                    },
+                subtitle: {
+                    text: ''
+                    },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                        }
+                        }
+                        },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: '价格（元）'
+                            }
+                        },
+                legend: {
+                    enabled: false
+                        },
+                series: [{
+                    name: 'AveragePrice',
+                    data:data
+                    }],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                            }
+                            }
+});
+});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="https://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+	</head>
+	<body>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/highcharts.js"></script>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/modules/exporting.js"></script>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/themes/sand-signika.js"></script>
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+  $.getJSON('http://139.129.166.245:13000/jsonp?file=2.json&callback=?', function (data) {
+Highcharts.chart('container', {
+    title: {
+        text: '房屋价格同比环比增长百分比图'
+    },
+    xAxis: {
+        categories: ['2016年1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月']
+    },
+    yAxis:{
+        title:{
+            text:'百分比（%）'
+        }
+    },
+    /*labels: {
+        items: [{
+            html: 'Total fruit consumption',
+            style: {
+                left: '50px',
+                top: '18px',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+            }
+        }]
+    },*/
+    series: [{
+        type: 'column',
+        name: '环比增长',
+        data: data.series1
+    }, {
+        type: 'spline',
+        name: '同比增长',
+        data: data.series2,
+        marker: {
+            lineWidth: 2,
+            lineColor: Highcharts.getOptions().colors[3],
+            fillColor: 'white'
+        }
+    }],
+       
+
+});
+  });
+
+		</script>
+	</body>
+</html>
