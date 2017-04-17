@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+
+		<script type="text/javascript" src="https://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+		<style type="text/css">
+${demo.css}
+		</style>
+	</head>
+	<body>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/highcharts.js"></script>
+<script src="https://cdn.hcharts.cn/highcharts/5.0.9/modules/exporting.js"></script>
+
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+
+
+
+		<script type="text/javascript">
+$.getJSON('http://139.129.166.245:13000/jsonp?file=4.json&callback=?', function (data) {
+Highcharts.chart('container', {
+        chart: {
+            zoomType: 'xy'
+        },
+        title: {
+            text: '成交量与成交价格'
+        },
+        xAxis: [{
+            categories: ['1月', '2月', '3月', '4月', '5月','6月','7月','8月','9月','10月','11月','12月'],
+            crosshair: true
+        }],
+        yAxis: [{ // Primary yAxis
+            labels: {
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            title: {
+                text: '成交量（套）',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            }
+        }, { // Secondary yAxis
+            title: {
+                text: '成交价格（元）',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            labels: {
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
+        tooltip: {
+            shared: true
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            x: 50,
+            verticalAlign: 'top',
+            y: 50,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [{
+            name: '成交价格',
+            type: 'column',
+            yAxis: 1,
+            data: data.series1,
+            tooltip: {
+                valueSuffix: '元'
+            }
+        }, {
+            name: '成交量',
+            type: 'spline',
+            data: data.series2,
+            tooltip: {
+                valueSuffix: '套'
+            }
+        }]
+    });
+});
+
+		</script>
+	</body>
+</html>
